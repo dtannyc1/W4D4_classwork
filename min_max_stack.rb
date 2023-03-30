@@ -9,8 +9,16 @@ class MinMaxStack < MyStack
 
     def push(ele)
         super
-        @max_stack.push(ele) if popped_ele > max
-        @min_stack.push(ele) if popped_ele < min
+        if !max.nil?
+            @max_stack.push(ele) if ele > max
+        else
+            @max_stack.push(ele)
+        end
+        if !min.nil?
+            @min_stack.push(ele) if ele < min
+        else
+            @min_stack.push(ele)
+        end
     end
 
     def pop

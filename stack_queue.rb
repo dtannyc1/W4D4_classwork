@@ -2,8 +2,8 @@ require_relative 'my_stack'
 
 class StackQueue
     def initialize
-        @enqueue_stack = MinMaxStack.new
-        @dequeue_stack = MinMaxStack.new
+        @enqueue_stack = MyStack.new
+        @dequeue_stack = MyStack.new
     end
 
     def size
@@ -31,13 +31,5 @@ class StackQueue
         until enqueue.empty? do
             dequeue_stack.push(enqueue_stack.pop)
         end
-    end
-
-    def max
-        @enqueue_stack.max > @dequeue_stack.max ? @enqueue_stack.max : @dequeue_stack.max
-    end
-
-    def min
-        @enqueue_stack.min < @dequeue_stack.min ? @enqueue_stack.min : @dequeue_stack.min
     end
 end
