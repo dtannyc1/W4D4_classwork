@@ -7,8 +7,8 @@ class MyStack
         @store.push(ele)
     end
 
-    def pop(ele)
-        @store.pop(ele)
+    def pop
+        @store.pop
     end
 
     def peek
