@@ -4,11 +4,10 @@ class StackQueue
     def initialize
         @enqueue_stack = MyStack.new
         @dequeue_stack = MyStack.new
-        @size = 0
     end
 
     def size
-        @size
+        @enqueue_stack.size + @dequeue_stack.size
     end
 
     def empty?
@@ -29,9 +28,8 @@ class StackQueue
     end
 
     def repopulate_dequeue
-        tmp_stack = enqueue_stack.dup
-        while !tmp_stack.empty?
-            dequeue_stack.push(tmp_stack.pop)
+        until enqueue.empty? do
+            dequeue_stack.push(enqueue_stack.pop)
         end
     end
 end

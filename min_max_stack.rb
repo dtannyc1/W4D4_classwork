@@ -2,8 +2,8 @@ require_relative 'my_stack'
 
 class MinMaxStack < MyStack
     def initialize
-        @min_stack = Stack.new
-        @max_stack = Stack.new
+        @min_stack = MyStack.new
+        @max_stack = MyStack.new
         super
     end
 
@@ -17,6 +17,7 @@ class MinMaxStack < MyStack
         popped_ele = super
         @max_stack.pop if popped_ele == max
         @min_stack.pop if popped_ele == min
+        popped_ele
     end
 
     def max
