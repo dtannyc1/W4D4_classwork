@@ -2,8 +2,8 @@
 # O(n!) - permutations
 def first_anagram?(str_1, str_2)
     # get all anagrams of str_1
-    all_anagrams = get_anagrams(str_1)
-    all_anagrams.include?(str_2)
+    all_anagrams = get_anagrams(str_1) # O(n!)
+    all_anagrams.include?(str_2) # O(n)
 end
 
 def get_anagrams(str) # just a helper function
